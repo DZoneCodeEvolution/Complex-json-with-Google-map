@@ -104,28 +104,30 @@ class _DetailScreenState extends State<DetailScreen> {
             ),
           ),
 
-              Container(
-                padding: EdgeInsets.fromLTRB(40.0, 20.0, 20.0, 0.0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    Text("Name : ${ widget.catelog.name  }",style: TextStyle(color: Colors.black) ,textScaleFactor: 1.5 ,),
-                    SizedBox(width: 60,),
-                    Text("Icao : ${widget.catelog.icao}",style: TextStyle(color: Colors.black) ,textScaleFactor: 1.5 ,),
-
-                  ],
-                ),
-              ),
-                Container(
-                  alignment: Alignment.topLeft,
-                  padding: EdgeInsets.fromLTRB(40.0, 5.0, 20.0, 0.0),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.stretch,
+               Container(
+                  padding: EdgeInsets.fromLTRB(40.0, 20.0, 20.0, 0.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
                     children: [
-                      Text("City : ${widget.catelog.city} , State : ${widget.catelog.state}",style: TextStyle(color: Colors.black) ,textScaleFactor: 1.5 ,),
-                      Text("Country : ${widget.catelog.country}",style: TextStyle(color: Colors.black) ,textScaleFactor: 1.5 ,),
-                      Text("Tz : ${widget.catelog.tz}",style: TextStyle(color: Colors.black) ,textScaleFactor: 1.5 ,),
+                      Expanded(child: Text("Name : ${ widget.catelog.name  }",style: TextStyle(color: Colors.black) ,textScaleFactor: 1.5 ,)),
+                      SizedBox(width: 60,),
+                      Expanded(child: Text("Icao : ${widget.catelog.icao}",style: TextStyle(color: Colors.black) ,textScaleFactor: 1.5 ,)),
+
                     ],
+                  ),
+                ),
+              Expanded(
+                  child: Container(
+                    alignment: Alignment.topLeft,
+                    padding: EdgeInsets.fromLTRB(40.0, 5.0, 20.0, 0.0),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.stretch,
+                      children: [
+                        Text("City : ${widget.catelog.city} , State : ${widget.catelog.state}",style: TextStyle(color: Colors.black) ,textScaleFactor: 1.5 ,),
+                        Text("Country : ${widget.catelog.country}",style: TextStyle(color: Colors.black) ,textScaleFactor: 1.5 ,),
+                        Text("Tz : ${widget.catelog.tz}",style: TextStyle(color: Colors.black) ,textScaleFactor: 1.5 ,),
+                      ],
+                    ),
                   ),
                 )
 
