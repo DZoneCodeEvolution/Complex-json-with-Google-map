@@ -5,13 +5,12 @@ import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'dart:async';
 import 'package:geolocator/geolocator.dart';
+import 'package:geocoder/geocoder.dart';
 
 
 class DetailScreen extends StatefulWidget {
    final catelog;
    const DetailScreen({ this.catelog });
-
-
 
   @override
   _DetailScreenState createState() => _DetailScreenState();
@@ -24,7 +23,7 @@ class _DetailScreenState extends State<DetailScreen> {
    static var  _initialPosition;
   final Set<Marker> _markers = {};
   static LatLng _lastMapPosition = _initialPosition;
-
+  var addresses;
 
 
 
@@ -62,13 +61,12 @@ class _DetailScreenState extends State<DetailScreen> {
 
 
 
-
   @override
   Widget build(BuildContext context) {
     Map<MarkerId, Marker> markers = <MarkerId, Marker>{MarkerId('marker_id_1'):Marker(
-      markerId: MarkerId('marker_id_1'),
+      markerId: MarkerId(""),
       position: LatLng(double.parse(widget.catelog.lat), double.parse(widget.catelog.lon)),
-      infoWindow: InfoWindow(title: 'marker_id_1', snippet: '*'),
+      infoWindow: InfoWindow(title: widget.catelog.city  , snippet: ""),
       onTap: () {
         //_onMarkerTapped(markerId);
         print('Marker Tapped');

@@ -1,8 +1,6 @@
 class PostModel {
 
-  //static List<PostModel> items;
-
-
+  static List<PostModel> items;
   final String icao;
   final String name;
   final String city;
@@ -13,9 +11,7 @@ class PostModel {
   final String lon;
   final String tz;
 
-
-  PostModel({ this.icao,  this.name,  this.city,  this.state,  this.country,  this.elevation,  this.lat,  this.lon,  this.tz});
-
+  PostModel({  this.icao,  this.name,  this.city,  this.state,  this.country,  this.elevation,  this.lat,  this.lon,  this.tz});
 
   factory PostModel.fromJson(Map<String, dynamic> map) {
     return PostModel(
